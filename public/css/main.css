@@ -1,0 +1,33 @@
+.position{
+    z-index:3;
+    position: fixed;
+    width: 100%;
+}
+
+.main{
+    width: 80%;
+    float: right;
+}
+
+.navbar{
+    border-bottom: 1px solid gainsboro;
+}
+
+aside{
+    z-index:2;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    background: white;
+    border: 1px solid gainsboro;
+}
+
+aside ul{
+    list-style-type: none;
+    padding: 25%;
+}
+
+aside ul li{
+    padding-top: 28%;
+    font-size: 16px;
+}

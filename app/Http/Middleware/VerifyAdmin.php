@@ -28,6 +28,6 @@ class VerifyAdmin
             }
         }
             
-        return redirect('\notauthorized');
+        return redirect('\error');
     }
 }

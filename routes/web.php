@@ -16,4 +16,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home')->middleware('VerifyAdmin:0');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/error', 'HomeController@error');

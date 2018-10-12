@@ -32,4 +32,9 @@ class HomeController extends Controller
         return view('auth/error');
 
     }
+
+    public function publish()
+    {
+        
+    }
 }

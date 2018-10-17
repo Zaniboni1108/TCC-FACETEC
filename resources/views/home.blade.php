@@ -39,6 +39,8 @@
                         <input type="submit" value="Publicar" />
                         
                     </form>
+                    
+                    <hr />
 
                     
                     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\File;
 
 class HomeController extends Controller
 {
@@ -33,8 +34,20 @@ class HomeController extends Controller
 
     }
 
-    public function publish()
+    public function publish(Request $request)
     {
-        
+        $request->validate([
+            'msg' => 'required',
+            'file' => 'required',
+        ]);
+
+        $file = new File;
+        $file->msg = $request->input('msg');
+        $file->tamanho = $request->file->getClientSize();
+        $file->tipo = $request->file->extension();
+        $file->caminho = '/assets/files/'.$request->file->storeAs('', str_slug($file->msg).'.'.$file->tipo, 'upl_files');
+        $file->save();
+
+        return back()->with('menssagem', 'Upload realizado com sucesso');
     }
 }

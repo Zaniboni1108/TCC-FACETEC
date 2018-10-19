@@ -43,9 +43,10 @@ class HomeController extends Controller
 
         $file = new File;
         $file->msg = $request->input('msg');
+        $file->name = $request->file->getClientOriginalName();
         $file->tamanho = $request->file->getClientSize();
         $file->tipo = $request->file->extension();
-        $file->caminho = '/assets/files/'.$request->file->storeAs('', str_slug($file->msg).'.'.$file->tipo, 'upl_files');
+        $file->caminho = '/assets/files/'.$request->file->storeAs('', str_slug($file->name).'.'.$file->tipo, 'upl_files');
         $file->save();
 
         return back()->with('menssagem', 'Upload realizado com sucesso');

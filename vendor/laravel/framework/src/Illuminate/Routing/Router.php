@@ -1150,7 +1150,7 @@ class Router implements RegistrarContract, BindingRegistrar
 
         // Registration Routes...
         if ($options['register'] ?? true) {
-            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware("VerifyAdmin:0");
+            $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register')->middleware('VerifyAdmin:0');
             $this->post('register', 'Auth\RegisterController@register');
         }
 

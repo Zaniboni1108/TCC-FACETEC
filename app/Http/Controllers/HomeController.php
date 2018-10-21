@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use App\File;
 
@@ -47,8 +49,8 @@ class HomeController extends Controller
         $file->tamanho = $request->file->getClientSize();
         $file->tipo = $request->file->extension();
         $file->caminho = '/assets/files/'.$request->file->storeAs('', str_slug($file->name).'.'.$file->tipo, 'upl_files');
+        $file->user_id = Auth::user()->id; 
         $file->save();
-
         return back()->with('menssagem', 'Upload realizado com sucesso');
     }
 }

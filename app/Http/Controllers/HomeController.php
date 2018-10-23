@@ -26,14 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $file = File::orderBy('id', 'DESC')->get();
+        
+        return view('home')->with('files', $file);
     }
 
 
     public function error() {
-
-        return view('auth/error');
-
+        return back();
     }
 
     public function publish(Request $request)
@@ -52,5 +52,9 @@ class HomeController extends Controller
         $file->user_id = Auth::user()->id; 
         $file->save();
         return back()->with('menssagem', 'Upload realizado com sucesso');
+    }
+
+    public function my_publish(){
+
     }
 }

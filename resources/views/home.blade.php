@@ -49,30 +49,30 @@
                         
                         <div class="card">
                                 <div class="card-header">
-                                    <?= "Publicado por: <i style='color: CornflowerBlue;'>" . $file->usuario() . "</i>" ?>
+                                    <?= "<i style='color: CornflowerBlue;'>" . $file->usuario() . "</i>" ?>
+                                    
+                                        <br />
+                                        <?= $file->msg ?>
+                                  
                                 </div>
                             <table>
                                 <tr>
                                     <td>
-                                    <div class="container">
-                                        <br />
-                                        <?= $file->msg ?>
-                                    </div>
                                     </td>
                                 </tr>
+                            
                                 <tr>
                                     <td>
-                                        <hr />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
+                                        
                                         <center>
-                                            <?= $file->caminho ?>
+                                            <?php echo "<a target='_blank' href='" . url('storage/' . $file->caminho) ."'><img src='" . url('storage/' . $file->caminho) . "' style='width:638px'></a>" ?>
                                         </center>
+                                        
+
                                     </td>
                                 </tr>
                             </table>
+                            <div class="card-header"><a href="#">LIKE</a></div>
                         </div>
                         <br />
                         <?php endforeach ?>

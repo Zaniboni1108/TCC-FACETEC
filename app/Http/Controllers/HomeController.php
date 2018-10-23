@@ -40,17 +40,20 @@ class HomeController extends Controller
     {
         $request->validate([
             'msg' => 'required',
-            'file' => 'required',
+            'file' => 'required'
         ]);
-
+        
+        
         $file = new File;
         $file->msg = $request->input('msg');
         $file->name = $request->file->getClientOriginalName();
         $file->tamanho = $request->file->getClientSize();
         $file->tipo = $request->file->extension();
-        $file->caminho = '/assets/files/'.$request->file->storeAs('', str_slug($file->name).'.'.$file->tipo, 'upl_files');
+        $file->caminho = $request->file->storeAs('', str_slug($file->name).'.'.$file->tipo, 'public');
         $file->user_id = Auth::user()->id; 
         $file->save();
+
+        
         return back()->with('menssagem', 'Upload realizado com sucesso');
     }
 

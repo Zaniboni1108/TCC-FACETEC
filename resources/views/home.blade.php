@@ -37,8 +37,8 @@
 
 
 
-                <div class="card">
-                    <div class="card-body">
+                
+                    
                         @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -65,7 +65,7 @@
                                     <td>
                                         
                                         <center>
-                                            <?php echo "<a target='_blank' href='" . url('storage/' . $file->caminho) ."'><img src='" . url('storage/' . $file->caminho) . "' style='width:638px'></a>" ?>
+                                            <?php echo "<a target='_blank' href='" . url('storage/' . $file->caminho) ."'><img src='" . url('storage/' . $file->caminho) . "' style='width:100%'></a>" ?>
                                         </center>
                                         
 
@@ -78,8 +78,8 @@
                         <?php endforeach ?>
 
                     </div>
-                </div>
-            </div>
+                
+            
         </div>
     </div>
 </div>

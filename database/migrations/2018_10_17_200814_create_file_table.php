@@ -22,6 +22,7 @@ class CreateFileTable extends Migration
             $table->string('tipo');
             $table->string('tamanho');
             $table->string('caminho');
+            $table->string('categoria');
             $table->timestamps();
         });
     }

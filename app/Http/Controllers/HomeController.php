@@ -26,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $nome_pagina = "";
         $file = File::orderBy('id', 'DESC')->get();
-        
-        return view('home')->with('files', $file);
+        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
     }
 
 
@@ -50,6 +50,7 @@ class HomeController extends Controller
         $file->tamanho = $request->file->getClientSize();
         $file->tipo = $request->file->extension();
         $file->caminho = $request->file->storeAs('', str_slug($file->name).'.'.$file->tipo, 'public');
+        $file->categoria = $request->categoria;
         $file->user_id = Auth::user()->id; 
         $file->save();
 
@@ -57,7 +58,21 @@ class HomeController extends Controller
         return back()->with('menssagem', 'Upload realizado com sucesso');
     }
 
-    public function my_publish(){
+    public function profile(){
+        $nome_pagina = "PERFIL";
+        $file = File::orderBy('id', 'DESC')->where('user_id', Auth::user()->id)->get();
+        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
+    }
 
+    public function provas(){
+        $nome_pagina = "PROVAS";
+        $file = File::orderBy('id', 'DESC')->where('categoria', 'prova')->get();
+        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
+    }
+
+    public function gabaritos(){
+        $nome_pagina = "GABARITOS";
+        $file = File::orderBy('id', 'DESC')->where('categoria', 'gabarito')->get();
+        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);   
     }
 }

@@ -24,11 +24,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $nome_pagina = "";
-        $file = File::orderBy('id', 'DESC')->get();
-        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
+        $filtro = $request->filtro;
+        if($filtro != "todos"){
+            $file = File::orderBy('id', 'DESC')->where('turmas', $filtro)->get();
+        }
+        else{
+            $filtro = "todos";
+            $file = File::orderBy('id', 'DESC')->get();
+        }
+        return redirect('/home');
     }
 
 
@@ -51,7 +58,8 @@ class HomeController extends Controller
         $file->tipo = $request->file->extension();
         $file->caminho = $request->file->storeAs('', str_slug($file->name).'.'.$file->tipo, 'public');
         $file->categoria = $request->categoria;
-        $file->user_id = Auth::user()->id; 
+        $file->turmas = $request->turmas;
+        $file->user_id = Auth::user()->id;
         $file->save();
 
         

@@ -23,7 +23,24 @@
             <div class="col-md-8">
                 <div class="card">
 
-                    <div class="card-header">Publicar</div>
+                    <div class="card-header">Publicar
+                    
+                        <div style=" float: right;">
+                                <form action="/home">
+                            <select class="btn btn-outline-secondary" name="filtro">
+                                <Option value="todos">TODOS</Option>
+                                <Option value="3°IPIA">3°IPIA</Option>
+                                <Option value="gabarito">2°MA</Option>
+                                <Option value="gabarito">2°IA</Option>
+                                <Option value="gabarito">1°ADM</Option>
+                            </select>
+                            <input type="submit" class="btn btn-outline-secondary" value="FILTRAR"/>
+                        </form>
+                        </div>
+                    
+                    </div>
+
+
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
@@ -46,6 +63,14 @@
                                 <Option value="nenhum">NENHUM</Option>
                                 <Option value="prova">PROVA</Option>
                                 <Option value="gabarito">GABARITO</Option>
+                            </select>
+
+                            <select class="btn btn-outline-secondary" name="turmas">
+                                <Option value="nenhum">TURMA</Option>
+                                <Option value="3°IPIA">3°IPIA</Option>
+                                <Option value="2°MA">2°MA</Option>
+                                <Option value="2°IA">2°IA</Option>
+                                <Option value="1°ADM">1°ADM</Option>
                             </select>
                         </div>
                     </form>

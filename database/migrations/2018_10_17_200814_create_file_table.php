@@ -23,8 +23,11 @@ class CreateFileTable extends Migration
             $table->string('tamanho');
             $table->string('caminho');
             $table->string('categoria');
+            $table->string('turmas');
             $table->timestamps();
         });
+
+        
     }
 
     /**

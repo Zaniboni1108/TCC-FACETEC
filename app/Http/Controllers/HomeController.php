@@ -24,18 +24,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index(Request $request)
     {
-        $nome_pagina = "";
+        $nome_pagina = "INÍCIO";
         $filtro = $request->filtro;
-        if($filtro != "todos"){
-            $file = File::orderBy('id', 'DESC')->where('turmas', $filtro)->get();
-        }
-        else{
+        if(($filtro == "") || ($filtro == "todos")){
             $filtro = "todos";
             $file = File::orderBy('id', 'DESC')->get();
         }
-        return redirect('/home');
+        else{
+            $file = File::orderBy('id', 'DESC')->where('turmas', $filtro)->get();
+        }
+
+
+        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
     }
 
 
@@ -81,6 +84,12 @@ class HomeController extends Controller
     public function gabaritos(){
         $nome_pagina = "GABARITOS";
         $file = File::orderBy('id', 'DESC')->where('categoria', 'gabarito')->get();
+        return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);   
+    }
+
+    public function apostila(){
+        $nome_pagina = "APOSTILAS";
+        $file = File::orderBy('id', 'DESC')->where('categoria', 'apostila')->get();
         return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);   
     }
 }

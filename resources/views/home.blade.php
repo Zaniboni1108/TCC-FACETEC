@@ -59,11 +59,19 @@
                         
                         <div style="margin-right: 10px; float: right;">
                             ESCOLHER TIPO DE CONTEÚDO: &nbsp;
-                            <select class="btn btn-outline-secondary" name="categoria">
-                                <Option value="nenhum">NENHUM</Option>
-                                <Option value="prova">PROVA</Option>
-                                <Option value="gabarito">GABARITO</Option>
-                            </select>
+
+                            @if(Auth::user()->role == 0 or Auth::user()->role == 2)
+                                <select class='btn btn-outline-secondary' name='categoria'>
+                                    <Option value='nenhum'>NENHUM</Option>
+                                    <Option value='prova'>PROVA</Option>
+                                    <Option value='gabarito'>GABARITO</Option>
+                                    <Option value='apostila'>APOSTILA</Option>
+                                </select>
+                            @else
+                                <select class='btn btn-outline-secondary' name='categoria'>
+                                    <Option value='nenhum'>NENHUM</Option>
+                                </select>
+                            @endif
 
                             <select class="btn btn-outline-secondary" name="turmas">
                                 <Option value="nenhum">TURMA</Option>

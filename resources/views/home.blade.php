@@ -3,6 +3,7 @@
 @section('content')
 <br />
 <br />
+<br />
 
 @extends('fragmentos.aside')
 
@@ -23,18 +24,18 @@
             <div class="col-md-8">
                 <div class="card">
 
-                    <div class="card-header">Publicar
+                    <div class="card-header">PUBLICAR
                     
                         <div style=" float: right;">
                                 <form action="/home">
-                            <select class="btn btn-outline-secondary" name="filtro">
+                            <select class="btn btn-outline-primary" name="filtro">
                                 <Option value="todos">TODOS</Option>
                                 <Option value="3°IPIA">3°IPIA</Option>
-                                <Option value="gabarito">2°MA</Option>
-                                <Option value="gabarito">2°IA</Option>
-                                <Option value="gabarito">1°ADM</Option>
+                                <Option value="2°MA">2°MA</Option>
+                                <Option value="2°IA">2°IA</Option>
+                                <Option value="1°ADM">1°ADM</Option>
                             </select>
-                            <input type="submit" class="btn btn-outline-secondary" value="FILTRAR"/>
+                            <input type="submit" class="btn btn-outline-primary" value="FILTRAR"/>
                         </form>
                         </div>
                     
@@ -54,26 +55,26 @@
                         <div class="input-group mb-3">
                             <input style="border: none;" type="file" name="file" id="file" class="form-control"
                                 placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button style="margin-right: 10px;" class="btn btn-outline-secondary" type="submit" id="button-addon2">Publicar</button>
+                            <button style="margin-right: 10px;" class="btn btn-outline-primary" type="submit" id="button-addon2">Publicar</button>
                         </div>
                         
                         <div style="margin-right: 10px; float: right;">
                             ESCOLHER TIPO DE CONTEÚDO: &nbsp;
 
                             @if(Auth::user()->role == 0 or Auth::user()->role == 2)
-                                <select class='btn btn-outline-secondary' name='categoria'>
-                                    <Option value='nenhum'>NENHUM</Option>
-                                    <Option value='prova'>PROVA</Option>
-                                    <Option value='gabarito'>GABARITO</Option>
-                                    <Option value='apostila'>APOSTILA</Option>
+                                <select class='btn btn-outline-primary' name='categoria'>
+                                    <Option value="nenhum">NENHUM</Option>
+                                    <Option value="prova">PROVA</Option>
+                                    <Option value="gabarito">GABARITO</Option>
+                                    <Option value="apostila">APOSTILA</Option>
                                 </select>
                             @else
-                                <select class='btn btn-outline-secondary' name='categoria'>
+                                <select class='btn btn-outline-primary' name='categoria'>
                                     <Option value='nenhum'>NENHUM</Option>
                                 </select>
                             @endif
 
-                            <select class="btn btn-outline-secondary" name="turmas">
+                            <select class="btn btn-outline-primary" name="turmas">
                                 <Option value="nenhum">TURMA</Option>
                                 <Option value="3°IPIA">3°IPIA</Option>
                                 <Option value="2°MA">2°MA</Option>

@@ -1,3 +1,7 @@
+body{
+    background: #f0f3f5;
+}
+
 .position{
     z-index:3;
     position: fixed;
@@ -12,18 +16,19 @@
 
 .navbar{
     border-bottom: 1px solid gainsboro;
+    padding: 0px;
 }
 
 aside{
     z-index:4;
     position: fixed;
     width: 18%;
-    height: 87%;
+    height: 80%;
     background: white;
-    border: 1px solid gainsboro;
-    border-radius: 5px;
+    border-bottom: 5px solid gainsboro;
+    border-radius: 20px;
     margin-left: 1%;
-    margin-top: 70px;
+    margin-top: 90px;
 }
 
 aside ul{
@@ -47,4 +52,16 @@ aside ul li a{
 
 aside ul li a:hover{
     color: black;
+}
+
+.card-header{
+    background: white;
+    color: #57b2f8;
+    font-size: 15px;
+}
+
+.card{
+    border: 0px solid white;
+    border-bottom: 5px solid gainsboro;
+    border-radius: 20px;
 }

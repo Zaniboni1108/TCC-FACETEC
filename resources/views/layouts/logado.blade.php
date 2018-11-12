@@ -20,15 +20,21 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel position">
+        <nav style="background: #57b2f8;" class="navbar navbar-expand-md navbar-light navbar-laravel position">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    FaceTEC
-                </a>
+                <strong>
+                    <i>
+                    <a style="color: white; font-size: 20px;" class="navbar-brand" href="{{ url('/') }}">
+                        FACE-TEC
+                    </a>
+                    </i>
+                </strong>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -44,9 +50,10 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            <a style="color: white; font-size: 20px;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                                <!--{{ Auth::user()->name }} <span class="caret"></span> -->
+                                <img src="foto_perfil/padrao.png" width="40px" style="border: 8px solid white; border-radius: 50px; background: white;"/>
                             </a>
 
 

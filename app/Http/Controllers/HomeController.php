@@ -29,16 +29,15 @@ class HomeController extends Controller
     {
         $nome_pagina = "INÍCIO";
         $filtro = $request->filtro;
-        if(($filtro == "") || ($filtro == "todos")){
-            $filtro = "todos";
+        
+        if($filtro == "" or $filtro == "todos"){
             $file = File::orderBy('id', 'DESC')->get();
-        }
-        else{
-            $file = File::orderBy('id', 'DESC')->where('turmas', $filtro)->get();
+            return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
         }
 
-
+        $file = File::orderBy('id', 'DESC')->where('turmas', $filtro)->get();
         return view('home')->with('files', $file)->with('nome_pagina', $nome_pagina);
+        
     }
 
 

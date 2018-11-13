@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -28,11 +28,12 @@
         <nav style="background: #57b2f8;" class="navbar navbar-expand-md navbar-light navbar-laravel position">
             <div class="container">
                 <strong>
-                    <i>
-                    <a style="color: white; font-size: 20px;" class="navbar-brand" href="{{ url('/') }}">
-                        FACE-TEC
+                    
+                    <a style="color: white; font-size: 20px; font-family: 'Nunito', sans-serif;" class="navbar-brand" href="{{ url('/home') }}">
+                    <img src="logo.png" width="30"> 
+                    FACE-TEC
                     </a>
-                    </i>
+                    
                 </strong>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

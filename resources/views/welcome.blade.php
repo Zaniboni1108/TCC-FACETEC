@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-image: linear-gradient(#57b2f8, white);
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -49,17 +49,21 @@
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
+                color: white;
+                padding: 10px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                border: 2px solid white;
+                border-radius: 20px;
             }
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: white;
+                
             }
         </style>
     </head>
@@ -68,12 +72,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a class="btn btn-outline-light" href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a class="btn btn-outline-light" href="{{ route('login') }}">Login</a>
 
                         @if (Request::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a class="btn btn-outline-light" href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -81,18 +85,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <img style="margin-top: 20px;" src="logo.png" width="60">
+                    FACE-TEC
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
+
 </html>

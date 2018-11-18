@@ -65,7 +65,16 @@ class HomeController extends Controller
         $file->save();
 
         
-        return back()->with('menssagem', 'Upload realizado com sucesso');
+        return back()->with('messagem', 'Upload realizado com sucesso');
+    }
+
+    public function publish_delete(Request $request)
+    {
+        $id = $request->id;
+        $files = File::find($id);
+        $files->delete();
+
+        return back()->with('messagem', 'Deletado com sucesso');
     }
 
     public function profile(){

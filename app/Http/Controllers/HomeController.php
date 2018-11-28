@@ -77,6 +77,26 @@ class HomeController extends Controller
         return back()->with('messagem', 'Deletado com sucesso');
     }
 
+    public function editar(Request $request)
+    {
+        $id = $request->id;
+        $files = File::find($id);
+
+        return view('editar')->with('files', $files);
+    }
+
+    public function publish_editar(Request $request)
+    {
+        $id = $request->id;
+        $dados = $request->all();
+        $file = File::find($id);
+        
+        $file->update($dados);
+
+        
+        return redirect()->action('HomeController@index');
+    }
+
     public function profile(){
         $nome_pagina = "PERFIL";
         $file = File::orderBy('id', 'DESC')->where('user_id', Auth::user()->id)->get();

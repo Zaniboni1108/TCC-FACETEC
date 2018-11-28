@@ -108,7 +108,8 @@
                                     <form action='/publish_delete/<?= $file->id?>'>
                                         <button type="submit" class='btn btn-light' style="width: 100%;">Apagar</button>
                                     </form>
-                                    <form action='/publish_delete/<?= $file->id?>'>
+
+                                    <form action='/editar/<?= $file->id?>'>
                                         <button type="submit" class='btn btn-light' style="width: 100%;">Editar</button>
                                     </form>
                                 </div>

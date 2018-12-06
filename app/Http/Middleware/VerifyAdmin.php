@@ -28,6 +28,6 @@ class VerifyAdmin
             }
         }
             
-        return redirect('\error');
+        return redirect('/home');
     }
 }

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Http\Request;
+use App\User;
 use App\File;
 
 class HomeController extends Controller
@@ -76,6 +76,25 @@ class HomeController extends Controller
 
         return back()->with('messagem', 'Deletado com sucesso');
     }
+
+
+
+    public function edit_perfil(Request $request)
+    {
+        return view('editar_perfil');
+    }
+
+    public function edit_perfil2(Request $request)
+    {
+        
+        $usuario_edit = $request->all();
+        
+        auth()->user()->update($request);
+
+        return redirect('/home') ;
+    }
+
+
 
     public function editar(Request $request)
     {

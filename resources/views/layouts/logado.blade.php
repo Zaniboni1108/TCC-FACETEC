@@ -64,6 +64,10 @@
                                     Minha conta
                                 </a>
 
+                                <a class='dropdown-item' href='/perfil_edit'>
+                                    Editar Perfil
+                                </a>
+
                                 <?php 
                                 if(Auth::user()->role == 0){
                                     

@@ -29,3 +29,6 @@ Route::get('/error', 'HomeController@error');
 
 Route::post('/publish', 'HomeController@publish');
 
+Route::get('/perfil_edit', 'HomeController@edit_perfil');
+Route::get('/perfil_edit2', 'HomeController@edit_perfil2');
+

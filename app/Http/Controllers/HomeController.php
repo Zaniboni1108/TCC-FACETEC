@@ -89,9 +89,9 @@ class HomeController extends Controller
         
         $usuario_edit = $request->all();
         
-        auth()->user()->update($request);
+        auth()->user()->update($usuario_edit);
 
-        return redirect('/home') ;
+        return redirect()->route('/home') ;
     }
 
 

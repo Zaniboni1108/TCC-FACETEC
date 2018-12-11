@@ -15,10 +15,10 @@
             {{ session('status') }}
         </div>
         @endif
-        <form action="/perfil_edit2" method="POST" enctype="multipart/form-data">
+        <form action="/perfil_edit2/{{ auth()->user()->id }}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
            
-            <input  type="text" value="{{ auth()->user()->name }}" name="" id="" class="form-control">
+            <input  type="text" value="{{ auth()->user()->name }}" name="name" id="name" class="form-control">
            
             <!--style="border: none; height: 80px; -->
             <hr />
@@ -34,9 +34,9 @@
 
             <br />
 
-            <form action='/publish_editar/'>
-                <button style="margin-right: 10px; float: right;" class="btn btn-outline-primary" type="submit" id="button-addon2">Editar</button>
-            </form>
+            
+            <button style="margin-right: 10px; float: right;" class="btn btn-outline-primary" type="submit" id="button-addon2">Editar</button>
+            
             
             
            

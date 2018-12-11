@@ -15,8 +15,8 @@
             {{ session('status') }}
         </div>
         @endif
-        <form action="/publish" method="POST" enctype="multipart/form-data">
-            {{csrf_field()}}
+        <form action="/publish_editar/<?= $files->id?>" method="POST">
+        {{csrf_field()}}
             <textarea style="border: none; height: 80px;" name="msg" class="form-control" aria-label="With textarea"
                 placeholder="Sua menssagem...">{{$files->msg}}</textarea>
             <hr />
@@ -32,9 +32,9 @@
 
             <br />
 
-            <form action='/publish_editar/<?= $files->id?>'>
-                <button style="margin-right: 10px; float: right;" class="btn btn-outline-primary" type="submit" id="button-addon2">Editar</button>
-            </form>
+            
+            <button style="margin-right: 10px; float: right;" class="btn btn-outline-primary" type="submit" id="button-addon2">Editar</button>
+            
             
             
             <div style="margin-left: 10px; float: left;">

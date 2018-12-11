@@ -80,18 +80,17 @@ class HomeController extends Controller
 
 
     public function edit_perfil(Request $request)
-    {
+    {   
         return view('editar_perfil');
     }
 
     public function edit_perfil2(Request $request)
     {
-        
-        $usuario_edit = $request->all();
-        
-        auth()->user()->update($usuario_edit);
-
-        return redirect()->route('/home') ;
+        $id = $request->id;
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->update();
+        return redirect()->action('HomeController@profile');
     }
 
 
@@ -105,15 +104,14 @@ class HomeController extends Controller
     }
 
     public function publish_editar(Request $request)
-    {
+    {   
         $id = $request->id;
-        $dados = $request->all();
-        $file = File::find($id);
-        
-        $file->update($dados);
-
-        
-        return redirect()->action('HomeController@index');
+        $files = File::find($id);
+        $files->msg = $request->input("msg");
+        $files->categoria = $request->categoria;
+        $files->turmas = $request->turmas;
+        $files->update();
+        return back()->with('messagem', 'Editado com sucesso');
     }
 
     public function profile(){

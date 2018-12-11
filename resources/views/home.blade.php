@@ -3,7 +3,6 @@
 @section('content')
 <br />
 <br />
-<br />
 
 @extends('fragmentos.aside')
 

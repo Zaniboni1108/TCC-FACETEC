@@ -111,7 +111,7 @@ class HomeController extends Controller
         $files->categoria = $request->categoria;
         $files->turmas = $request->turmas;
         $files->update();
-        return back()->with('messagem', 'Editado com sucesso');
+        return redirect()->action('HomeController@profile');
     }
 
     public function profile(){

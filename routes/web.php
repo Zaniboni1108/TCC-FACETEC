@@ -27,7 +27,7 @@ Route::get('/apostilas', 'HomeController@apostila')->name('apostila');
 
 Route::get('/error', 'HomeController@error');
 
-Route::get('/publish', 'HomeController@publish');
+Route::post('/publish', 'HomeController@publish');
 
 Route::get('/perfil_edit', 'HomeController@edit_perfil');
 Route::post('/perfil_edit2/{id}', 'HomeController@edit_perfil2');

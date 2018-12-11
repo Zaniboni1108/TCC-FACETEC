@@ -96,6 +96,7 @@
                 <?php foreach ($files as $file) : ?>
                 <div class="card">
                     <div class="card-header">
+                    @if ($file->user_id == Auth()->User()->id)
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown">
                                 <a style="color: white; font-size: 20px;" id="navbarDropdown" class="nav-link dropdown-toggle"
@@ -114,6 +115,7 @@
                                 </div>
                             </li>
                         </ul>
+                        @endif
                         <?= "<span style='color: CornflowerBlue;'>" . $file->usuario() . "</span>" ?>
                         <br />
                         Categoria:
